@@ -169,7 +169,8 @@ button:hover {
 /* Cart and Favourite Item Styles */
 .cart-container, .favourite-container {
     padding: 20px;
-    margin-top: 80px; /* Space below navbar */
+    margin-top: 80px;
+    color: white; /* Space below navbar */
 }
 
 .cart-item, .favourite-item {
