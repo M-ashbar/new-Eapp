@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   
+      
+
+
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html" class="logo">CartCraze</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="favourite.html">Favourite</a>
+            <a href="contact.html">Contact</a>
+           
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <button class="logout-button" onclick="logout()">Logout</button>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="login(event); return false;">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+        <p>if you have accounut <a href="signup.html">Sign Up </a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CartCraze. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

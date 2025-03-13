@@ -1,0 +1,331 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Fallback color */
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out;
+
+    /* Add background image */
+    background-image: url('https://img.freepik.com/premium-vector/black-friday-sale-seamless-pattern-dark_251819-2914.jpg?ga=GA1.1.130466479.1741893334&semt=ais_hybrid'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3b3a81, #3f3cdb);
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #1a1b1b;
+}
+
+/* Logo Image Styles */
+
+
+/* Make the app name bold */
+.logo {
+    font-weight: bolder;
+    margin-left: 20px;
+    font-size: xx-large; /* Optional: Add spacing between logo and app name */
+}
+
+/* Menu Icon for Mobile */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+/* Product Container Styles */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product Card Styles */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Specific Button Colors */
+.product-card button {
+    background: linear-gradient(135deg, #636161, #f10505); 
+    color: white;
+}
+
+.product-card button:hover {
+    background: linear-gradient(135deg, #636161, #080808);
+}
+
+.product-card button:nth-child(4) {
+    background: linear-gradient(135deg, #0c0c0c, #212a75);/
+}
+
+.product-card button:nth-child(4):hover {
+    background: linear-gradient(135deg, #636161, #2c406b);/
+}
+
+/* Cart and Favourite Item Styles */
+.cart-container, .favourite-container {
+    padding: 20px;
+    margin-top: 80px; /* Space below navbar */
+}
+
+.cart-item, .favourite-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-item img, .favourite-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #242424, #f0edf3);
+    color: rgb(15, 15, 15);
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Login and Auth Container Styles */
+.auth-container, .login-container {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Gradient background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
+    max-width: 400px;
+    margin: 80px auto; /* Space below navbar */
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.auth-container:hover, .login-container:hover {
+    transform: translateY(-5px); /* Lift container on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.auth-container h2, .login-container h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px; /* Slight letter spacing */
+}
+
+.auth-container input, .login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth input focus effect */
+}
+
+.auth-container input:focus, .login-container input:focus {
+    border-color: #93e0ee; /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(147, 224, 238, 0.5); /* Glow effect on focus */
+    outline: none; /* Remove default outline */
+}
+
+.auth-container button, .login-container button {
+    background: linear-gradient(135deg, #0c0c0c, #525cbd);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.auth-container button:hover, .login-container button:hover {
+    background: linear-gradient(135deg, #3e4675, #eff0f3); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+.auth-container button:active, .login-container button:active {
+    transform: translateY(0); /* Reset button position on click */
+}
+
+/* Contact Page Styling */
+.contact-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.contact-container h1 {
+    margin-bottom: 20px;
+}
+
+.contact-container input, .contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-container button {
+    background: linear-gradient(135deg, #0c0c0c, #525cbd);
+
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-container button:hover {
+    background-color: #93e0ee;
+}
